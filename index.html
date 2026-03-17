@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cyvas Angin</title>
+    <style>
+      body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f0f4f8;
+      }
+      .fan-container {
+        position: relative;
+        width: 300px;
+        height: 400px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .cage {
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        border: 8px solid #a0aab5;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: repeating-radial-gradient(
+          circle,
+          transparent,
+          transparent 10px,
+          rgba(160, 170, 181, 0.2) 10px,
+          rgba(160, 170, 181, 0.2) 12px
+        );
+        box-shadow: inset 0 0 20px rgba(0,0,0,0.1);
+        z-index: 2;
+      }
+      .blades {
+        width: 220px;
+        height: 220px;
+        position: absolute;
+        animation: spin 0.4s linear infinite;
+        z-index: 1;
+      }
+      .blade {
+        position: absolute;
+        width: 40px;
+        height: 100px;
+        background: #5c7c99;
+        border-radius: 50% 50% 10% 10%;
+        top: 10px;
+        left: 90px;
+        transform-origin: 20px 100px;
+      }
+      .blade:nth-child(2) { transform: rotate(120deg); }
+      .blade:nth-child(3) { transform: rotate(240deg); }
+      .center-hub {
+        width: 40px;
+        height: 40px;
+        background: #3e5a74;
+        border-radius: 50%;
+        position: absolute;
+        z-index: 3;
+      }
+      .stand-neck {
+        width: 20px;
+        height: 100px;
+        background: #8e9ba8;
+        margin-top: -10px;
+        z-index: 0;
+      }
+      .base {
+        width: 150px;
+        height: 30px;
+        background: #738496;
+        border-radius: 20px 20px 0 0;
+      }
+      @keyframes spin {
+        100% { transform: rotate(360deg); }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="fan-container">
+      <div class="cage">
+        <div class="blades">
+          <div class="blade"></div>
+          <div class="blade"></div>
+          <div class="blade"></div>
+        </div>
+        <div class="center-hub"></div>
+      </div>
+      <div class="stand-neck"></div>
+      <div class="base"></div>
+    </div>
+  </body>
+</html>
